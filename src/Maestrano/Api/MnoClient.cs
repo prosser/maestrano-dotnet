@@ -34,7 +34,7 @@ namespace Maestrano.Api
             _client = new RestClient();
             _client.UserAgent = "maestrano-dotnet/" + version;
             _client.Authenticator = new HttpBasicAuthenticator(ApiId, ApiKey);
-            _client.BaseUrl = String.Format("{0}{1}", ApiHost, ApiBase);
+            _client.BaseUrl = new Uri(String.Format("{0}{1}", ApiHost, ApiBase));
         }
 
         /// <summary>

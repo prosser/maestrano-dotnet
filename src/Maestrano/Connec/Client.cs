@@ -41,7 +41,7 @@ namespace Maestrano.Connec
             _client = new RestClient();
             _client.UserAgent = "maestrano-dotnet/" + version;
             _client.Authenticator = new HttpBasicAuthenticator(ApiId, ApiKey);
-            _client.BaseUrl = String.Format("{0}{1}", ConnecHost, ConnecScopedPath);
+            _client.BaseUrl = new Uri(String.Format("{0}{1}", ConnecHost, ConnecScopedPath));
             _client.AddDefaultHeader("Accept", "application/vnd.api+json");
             _client.AddDefaultHeader("Content-Type", "application/vnd.api+json");
         }
