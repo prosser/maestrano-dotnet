@@ -1,27 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections.Specialized;
+﻿using Maestrano.Helpers;
 using Newtonsoft.Json.Linq;
-using Maestrano.Helpers;
+using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Linq;
 
 namespace Maestrano.Sso
 {
     public class Group
     {
-        public string Uid { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public bool HasCreditCard { get; set; }
-        public DateTime FreeTrialEndAt { get; set; }
-        public string CompanyName { get; set; }
-
-        public string Currency { get; set; }
-        public TimeZoneInfo Timezone { get; set; }
-        public string Country { get; set; }
-        public string City { get; set; }
+        public Group()
+        {
+        }
 
         /// <summary>
         /// Constructor loading group attributes from a Saml.Response
@@ -30,7 +20,7 @@ namespace Maestrano.Sso
         public Group(Saml.Response samlResponse)
         {
             NameValueCollection att = samlResponse.GetAttributes();
-            
+
             // General info
             Uid = att["group_uid"];
             Name = att["group_name"];
@@ -39,7 +29,7 @@ namespace Maestrano.Sso
             HasCreditCard = att["group_has_credit_card"].Equals("true");
 
             // Set Free trial in the past on failure
-            try 
+            try
             {
                 FreeTrialEndAt = DateTime.Parse(att["group_end_free_trial"]);
             }
@@ -55,6 +45,26 @@ namespace Maestrano.Sso
             City = att["group_city"];
         }
 
+        public string City { get; set; }
+
+        public string CompanyName { get; set; }
+
+        public string Country { get; set; }
+
+        public string Currency { get; set; }
+
+        public string Email { get; set; }
+
+        public DateTime FreeTrialEndAt { get; set; }
+
+        public bool HasCreditCard { get; set; }
+
+        public string Name { get; set; }
+
+        public TimeZoneInfo Timezone { get; set; }
+
+        public string Uid { get; set; }
+
         /// <summary>
         /// Return a serializable dictionary describing the resource
         /// </summary>
@@ -68,9 +78,8 @@ namespace Maestrano.Sso
                     new JProperty("free_trial_end_at", FreeTrialEndAt),
                     new JProperty("company_name", CompanyName),
                     new JProperty("country", Country))),
-                new JProperty("extra",null)
+                new JProperty("extra", null)
              );
-
         }
     }
 }

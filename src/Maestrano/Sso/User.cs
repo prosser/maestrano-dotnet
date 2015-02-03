@@ -3,27 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Maestrano.Sso
 {
-
     public class User
     {
-        public string SsoSession { get; set; }
-        public DateTime SsoSessionRecheck { get; set; }
-        public string GroupUid { get; set; }
-        public string GroupRole { get; set; }
-        public string Uid { get; set; }
-        public string VirtualUid { get; set; }
-        public string Email { get; set; }
-        public string VirtualEmail { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Country { get; set; }
-        public string CompanyName { get; set; }
-
+        public User()
+        {
+        }
 
         /// <summary>
         /// Constructor loading user attributes from a Saml.Response
@@ -44,20 +31,31 @@ namespace Maestrano.Sso
             LastName = att["surname"];
             Country = att["country"];
             CompanyName = att["company_name"];
-
         }
 
-        /// <summary>
-        /// Return the real Uid if Maestrano.Sso.CreationMode is set
-        /// to "real" and the VirtualUid otherwise ("virtual" mode)
-        /// </summary>
-        public string ToUid()
-        {
-            if (MnoHelper.Sso.CreationMode.Equals("real"))
-                return Uid;
-            else
-                return VirtualUid;
-        }
+        public string CompanyName { get; set; }
+
+        public string Country { get; set; }
+
+        public string Email { get; set; }
+
+        public string FirstName { get; set; }
+
+        public string GroupRole { get; set; }
+
+        public string GroupUid { get; set; }
+
+        public string LastName { get; set; }
+
+        public string SsoSession { get; set; }
+
+        public DateTime SsoSessionRecheck { get; set; }
+
+        public string Uid { get; set; }
+
+        public string VirtualEmail { get; set; }
+
+        public string VirtualUid { get; set; }
 
         /// <summary>
         /// Return the real Email if Maestrano.Sso.CreationMode is set
@@ -102,7 +100,18 @@ namespace Maestrano.Sso
                         )
                 )
              );
-               
+        }
+
+        /// <summary>
+        /// Return the real Uid if Maestrano.Sso.CreationMode is set
+        /// to "real" and the VirtualUid otherwise ("virtual" mode)
+        /// </summary>
+        public string ToUid()
+        {
+            if (MnoHelper.Sso.CreationMode.Equals("real"))
+                return Uid;
+            else
+                return VirtualUid;
         }
     }
 }
