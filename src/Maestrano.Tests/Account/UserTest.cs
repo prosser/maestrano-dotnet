@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Maestrano.Account;
+using Maestrano.Helpers;
 
 namespace Maestrano.Tests.Account
 {
@@ -27,6 +28,15 @@ namespace Maestrano.Tests.Account
         {
             var obj = User.Retrieve("usr-1");
             Assert.AreEqual("usr-1", obj.Id);
+        }
+
+        [TestMethod]
+        public void CheckPassword_ItShouldReturnTheRightValues()
+        {
+            Assert.IsTrue(User.CheckPassword("usr-1", "password"));
+            Assert.IsFalse(User.CheckPassword("usr-1", "invalid_password"));
+            Assert.IsTrue(User.CheckPassword("j.doe@company.com", "password"));
+            Assert.IsFalse(User.CheckPassword("j.doe@company.com", "invalid_password"));
         }
     }
 }

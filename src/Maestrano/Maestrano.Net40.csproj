@@ -71,6 +71,7 @@
     <Compile Include="Configuration\WebhookConnec.cs" />
     <Compile Include="Configuration\WebhookConnecSubscriptions.cs" />
     <Compile Include="Connec\Client.cs" />
+    <Compile Include="Helpers\MnoEncryptor.cs" />
     <Compile Include="Helpers\StringExtensions.cs" />
     <Compile Include="Helpers\TimeZoneConverter.cs" />
     <Compile Include="Maestrano.cs" />
