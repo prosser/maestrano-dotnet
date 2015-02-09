@@ -9,6 +9,6 @@ namespace Maestrano.Account
         Unknown = 0,
         Submitted,
         Invoiced,
-        Canceled,
+        Cancelled,
     }
 }

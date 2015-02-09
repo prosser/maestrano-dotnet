@@ -10,6 +10,6 @@ namespace Maestrano.Account
         Submitted,
         Active,
         Expired,
-        Canceled,
+        Cancelled,
     }
 }
