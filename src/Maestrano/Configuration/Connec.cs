@@ -39,7 +39,7 @@ namespace Maestrano.Configuration
                     }
                     else
                     {
-                        return "http://api-sandbox.maestrano.io";
+                        return "https://mno-api-sandbox.herokuapp.com"; // "http://api-sandbox.maestrano.io";
                     }
                 }
                 return _host;

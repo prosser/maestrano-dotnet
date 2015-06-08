@@ -119,7 +119,7 @@ namespace Maestrano.Configuration
                     if (MnoHelper.Environment.Equals("production")) {
                         return "https://maestrano.com";
                     } else {
-                        return "http://api-sandbox.maestrano.io";
+                        return "https://mno-api-sandbox.herokuapp.com"; // "http://api-sandbox.maestrano.io";
                     }
                 }
                 return _idp;
