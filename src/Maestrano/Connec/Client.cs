@@ -1,6 +1,7 @@
 ﻿using Maestrano.Api;
 using Maestrano.Helpers;
 using RestSharp;
+using RestSharp.Authenticators;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;

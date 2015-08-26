@@ -7,6 +7,7 @@ using RestSharp;
 using System.Collections.Specialized;
 using Newtonsoft.Json;
 using Maestrano.Helpers;
+using RestSharp.Authenticators;
 
 namespace Maestrano.Api
 {
