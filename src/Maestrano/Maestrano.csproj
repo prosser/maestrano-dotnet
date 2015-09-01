@@ -57,7 +57,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="RestSharp, Version=100.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\src\packages\RestSharpSigned.105.2.2\lib\net45\RestSharp.dll</HintPath>
+      <HintPath>..\..\..\..\src\packages\RestSharpSigned.105.2.3\lib\net45\RestSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
