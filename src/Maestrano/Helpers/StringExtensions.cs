@@ -12,7 +12,7 @@ namespace Maestrano.Helpers
         /// <summary>
         /// Convert a string to snake case
         /// </summary>
-        /// <param name="pascalCasedWord">String to convert</param>
+        /// <param name="word">String to convert</param>
         /// <returns>string</returns>
         public static string ToSnakeCase(this string word)
         {

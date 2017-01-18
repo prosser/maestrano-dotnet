@@ -154,7 +154,6 @@ namespace Maestrano.Sso
         /// Return whether the session is valid or not. Performs a
         /// remote check to Maestrano if required.
         /// </summary>
-        /// <param name="client">RestClient to use for Remote validation</param>
         /// <returns>True if the Session should be treated as valid, otherwise false.</returns>
         public Boolean IsValid()
         {
